@@ -37,9 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\MoveTile.cs" />
-     <Compile Include="Assets\Scripts\SpawnBlocks.cs" />
-     <Compile Include="Assets\Scripts\EnemyBlockSpawn.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyBlock.cs" />
+     <Compile Include="Assets\Scripts\SpawnBlocks.cs" />
+     <None Include="Assets\Font\OFL.txt" />
+     <None Include="Assets\Font\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>E:/unity engine files/2020.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

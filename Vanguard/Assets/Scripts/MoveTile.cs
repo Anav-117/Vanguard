@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MoveTile : MonoBehaviour
 {
     private GameObject[] list;
     private GameObject[] allowed;
     private int i;
-    public float temp1, temp2;
+    private float temp1, temp2;
     private bool canMove, complete;
     private Vector2 pos1, pos2;
     private float moveHorizontal, moveVertical;
@@ -15,7 +16,11 @@ public class MoveTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        list = GameObject.FindGameObjectsWithTag("Hero");
+        list = GameObject.FindGameObjectsWithTag("Green");
+        list = list.Concat(GameObject.FindGameObjectsWithTag("Blue")).ToArray();
+        list = list.Concat(GameObject.FindGameObjectsWithTag("Red")).ToArray();
+        //list = GameObject.FindGameObjectsWithTag("Blue");
+        //list = GameObject.FindGameObjectsWithTag("Red");
         canMove = true;
         complete = false;
     }

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4841961160062333237}
   - component: {fileID: 4841961160062333236}
   - component: {fileID: 4841961160062333235}
-  - component: {fileID: -21854444281453956}
+  - component: {fileID: 7841864817564625545}
+  - component: {fileID: 7712365333750077343}
   m_Layer: 0
   m_Name: EnemyBlock
   m_TagString: Untagged
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
---- !u!114 &-21854444281453956
+--- !u!114 &7841864817564625545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,3 +164,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556683d479c73314cb1075191e9af982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &7712365333750077343
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841961160062333234}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841856}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3.9999998}
+  m_EdgeRadius: 0

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hero
+  - Green
+  - Red
+  - Blue
+  - EGreen
+  - EBlue
+  - ERed
   layers:
   - Default
   - TransparentFX
