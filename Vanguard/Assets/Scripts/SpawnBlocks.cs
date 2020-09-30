@@ -8,11 +8,11 @@ public class SpawnBlocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instantiate(prefabs[3], new Vector2(3, -4), Quaternion.identity);
         
         for (int i = 0; i < 3; i++) {
             Instantiate(prefabs[Random.Range(0, 3)], new Vector2((-3 + 2*i), -4), Quaternion.identity);
         }
-        Instantiate(prefabs[3], new Vector2(3, -4), Quaternion.identity);
 
         for (int i = 0; i < 4; i++) {
             Instantiate(prefabs[Random.Range(0, 3)], new Vector2((-3 + 2*i), -2), Quaternion.identity);
