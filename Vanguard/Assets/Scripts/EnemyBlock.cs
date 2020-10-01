@@ -7,11 +7,11 @@ public class EnemyBlock : MonoBehaviour
 { 
     private BoxCollider2D collisionbox;
     private bool condition;
-    public TextAsset score;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+           
     }
 
     // Update is called once per frame
@@ -33,6 +33,9 @@ public class EnemyBlock : MonoBehaviour
 		if (condition) {
             Destroy(gameObject);
             MoveTile.Score += 1;
+        }
+        else if (other.tag == "Player") {
+            SceneManager.LoadScene("MainMenuState");
         }
         else {
             Color tmp = other.GetComponent<SpriteRenderer>().color;

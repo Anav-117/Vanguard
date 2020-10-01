@@ -16,6 +16,7 @@ public class MoveTile : MonoBehaviour
     private AudioSource Sound;
     public static int Score;
 
+    private GameObject[,] board;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,12 @@ public class MoveTile : MonoBehaviour
         Paused = false;
         Sound = GetComponent<AudioSource>();
         Score = 0;
+
+        board = new GameObject [2,4];
+
+        fillBoard();
+        
+        //Debug.Log(board);
     }
 
     // Update is called once per frame
@@ -65,6 +72,7 @@ public class MoveTile : MonoBehaviour
                         pos2 = transform.position;
                         Sound.Play();
                         StartCoroutine(swap(i, "right"));
+                        boardUpdate("right");
                         //list[i].transform.Translate(new Vector3(-2, 0, 0));
                         //transform.Translate(new Vector3(2, 0, 0));
                         break;
@@ -83,6 +91,7 @@ public class MoveTile : MonoBehaviour
                         pos2 = transform.position;
                         Sound.Play();
                         StartCoroutine(swap(i, "left"));
+                        boardUpdate("left");
                         //list[i].transform.Translate(new Vector3(2, 0, 0));
                         //transform.Translate(new Vector3(-2, 0, 0));
                         break;
@@ -101,6 +110,7 @@ public class MoveTile : MonoBehaviour
                         pos2 = transform.position;
                         Sound.Play();
                         StartCoroutine(swap(i, "up"));
+                        boardUpdate("up");
                         //list[i].transform.Translate(new Vector3(0, -2, 0));
                         //transform.Translate(new Vector3(0, 2, 0));
                         break;
@@ -119,6 +129,7 @@ public class MoveTile : MonoBehaviour
                         pos2 = transform.position;
                         Sound.Play();
                         StartCoroutine(swap(i, "down"));
+                        boardUpdate("down");
                         //list[i].transform.Translate(new Vector3(0, 2, 0));
                         //transform.Translate(new Vector3(0, -2, 0));
                         break;
@@ -139,6 +150,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    flushBoard();
                     //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
@@ -152,6 +164,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    flushBoard();
                     //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
@@ -165,6 +178,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    flushBoard();
                     //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
@@ -178,6 +192,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    flushBoard();
                     //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
@@ -187,4 +202,82 @@ public class MoveTile : MonoBehaviour
         }
     }
 
+
+    void fillBoard() {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < list.Length; k++) {
+                    //Debug.Log((list[k].transform.position.y)/(-2));
+                    if (((list[k].transform.position.x + 3)/2) == j && ((list[k].transform.position.y)/(-2)) - 1 == i) {
+                        board[i,j] = list[k];
+                        break;
+                    }
+                }
+            }
+        }
+        board[1, 3] = GameObject.FindWithTag("Player");
+    }
+
+    void boardUpdate(string orientation) {
+        if (orientation == "right") {
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (board[i,j].tag == "Player" && j < 3) {
+                        GameObject temp = board[i,j];
+                        board[i,j] = board[i,j+1];
+                        board[i,j+1] = temp;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (orientation == "left") {
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (board[i,j].tag == "Player" && j > 0) {
+                        GameObject temp = board[i,j];
+                        board[i,j] = board[i,j-1];
+                        board[i,j-1] = temp;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (orientation == "up") {
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (board[i,j].tag == "Player" && i > 0) {
+                        GameObject temp = board[i,j];
+                        board[i,j] = board[i-1,j];
+                        board[i-1,j] = temp;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (orientation == "down") {
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (board[i,j].tag == "Player" && i < 1) {
+                        GameObject temp = board[i,j];
+                        board[i,j] = board[i+1,j];
+                        board[i+1,j] = temp;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    void flushBoard() {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 4; j++) {
+                //Debug.Log(board[i,j]);
+                board[i,j].transform.position = new Vector3((-3 + 2*j), ((i+1)*(-2)), 0);
+            }
+        }
+    }
 }

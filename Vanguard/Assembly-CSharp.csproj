@@ -36,15 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\setupScore.cs" />
      <Compile Include="Assets\Scripts\MoveTile.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyBlock.cs" />
+     <Compile Include="Assets\Scripts\MusicController.cs" />
+     <Compile Include="Assets\Scripts\InGameUI.cs" />
      <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
      <Compile Include="Assets\Scripts\SpawnBlocks.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
-     <Compile Include="Assets\Scripts\MusicController.cs" />
-     <Compile Include="Assets\Scripts\InGameUI.cs" />
-     <Compile Include="Assets\Scripts\setupScore.cs" />
      <None Include="Assets\PlayerData\Score.txt" />
      <None Include="Assets\Font\OFL.txt" />
      <None Include="Assets\Font\README.txt" />
