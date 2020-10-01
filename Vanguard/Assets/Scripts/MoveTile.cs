@@ -12,6 +12,9 @@ public class MoveTile : MonoBehaviour
     private bool canMove, complete;
     private Vector2 pos1, pos2;
     private float moveHorizontal, moveVertical;
+    public static bool Paused;
+    private AudioSource Sound;
+    public static int Score;
 
     // Start is called before the first frame update
     void Start()
@@ -23,95 +26,103 @@ public class MoveTile : MonoBehaviour
         //list = GameObject.FindGameObjectsWithTag("Red");
         canMove = true;
         complete = false;
+        Paused = false;
+        Sound = GetComponent<AudioSource>();
+        Score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {   
-        
-        if (canMove) {
-            if (Input.GetKeyDown("left")) {
-                moveHorizontal = -1;
-            }
-            if (Input.GetKeyDown("right")) {
-                moveHorizontal = 1;
-            }
-            if (Input.GetKeyDown("up")) {
-                moveVertical = 1;
-            }
-            if (Input.GetKeyDown("down")) {
-                moveVertical = -1;
-            }
-        }
-        else {
-            moveHorizontal = 0f;
-            moveVertical = 0f;
-        }
-
-        if ((moveHorizontal == 1) && canMove) {
-            for (i=0; i<(list.Length); i++) {
-                if (list[i].transform.position.x - transform.position.x == 2 && (transform.position.y == list[i].transform.position.y)) {
-                    canMove = false;
-                    complete = false;
-                    temp1 = list[i].transform.position.x;
-                    temp2 = transform.position.x;
-                    pos1 = list[i].transform.position;
-                    pos2 = transform.position;
-                    StartCoroutine(swap(i, "right"));
-                    //list[i].transform.Translate(new Vector3(-2, 0, 0));
-                    //transform.Translate(new Vector3(2, 0, 0));
-                    break;
+        if (!Paused) {
+            if (canMove) {
+                if (Input.GetKeyDown("left")) {
+                    moveHorizontal = -1;
+                }
+                if (Input.GetKeyDown("right")) {
+                    moveHorizontal = 1;
+                }
+                if (Input.GetKeyDown("up")) {
+                    moveVertical = 1;
+                }
+                if (Input.GetKeyDown("down")) {
+                    moveVertical = -1;
                 }
             }
-        }
+            else {
+                moveHorizontal = 0f;
+                moveVertical = 0f;
+            }
 
-        if ((moveHorizontal == -1) && canMove) {
-            for (i=0; i<(list.Length); i++) {
-                if (list[i].transform.position.x - transform.position.x == (-2) && (transform.position.y == list[i].transform.position.y)) {
-                    canMove = false;
-                    complete = false;
-                    temp1 = list[i].transform.position.x;
-                    temp2 = transform.position.x;
-                    pos1 = list[i].transform.position;
-                    pos2 = transform.position;
-                    StartCoroutine(swap(i, "left"));
-                    //list[i].transform.Translate(new Vector3(2, 0, 0));
-                    //transform.Translate(new Vector3(-2, 0, 0));
-                    break;
+            if ((moveHorizontal == 1) && canMove) {
+                for (i=0; i<(list.Length); i++) {
+                    if (list[i].transform.position.x - transform.position.x == 2 && (transform.position.y == list[i].transform.position.y)) {
+                        canMove = false;
+                        complete = false;
+                        temp1 = list[i].transform.position.x;
+                        temp2 = transform.position.x;
+                        pos1 = list[i].transform.position;
+                        pos2 = transform.position;
+                        Sound.Play();
+                        StartCoroutine(swap(i, "right"));
+                        //list[i].transform.Translate(new Vector3(-2, 0, 0));
+                        //transform.Translate(new Vector3(2, 0, 0));
+                        break;
+                    }
                 }
             }
-        }
 
-        if ((moveVertical == 1) && canMove) {
-            for (i=0; i<(list.Length); i++) {
-                if ((list[i].transform.position.y - transform.position.y == 2) && (transform.position.x == list[i].transform.position.x)) {
-                    canMove = false;
-                    complete = false;
-                    temp1 = list[i].transform.position.y;
-                    temp2 = transform.position.y;
-                    pos1 = list[i].transform.position;
-                    pos2 = transform.position;
-                    StartCoroutine(swap(i, "up"));
-                    //list[i].transform.Translate(new Vector3(0, -2, 0));
-                    //transform.Translate(new Vector3(0, 2, 0));
-                    break;
+            if ((moveHorizontal == -1) && canMove) {
+                for (i=0; i<(list.Length); i++) {
+                    if (list[i].transform.position.x - transform.position.x == (-2) && (transform.position.y == list[i].transform.position.y)) {
+                        canMove = false;
+                        complete = false;
+                        temp1 = list[i].transform.position.x;
+                        temp2 = transform.position.x;
+                        pos1 = list[i].transform.position;
+                        pos2 = transform.position;
+                        Sound.Play();
+                        StartCoroutine(swap(i, "left"));
+                        //list[i].transform.Translate(new Vector3(2, 0, 0));
+                        //transform.Translate(new Vector3(-2, 0, 0));
+                        break;
+                    }
                 }
             }
-        }
 
-        if ((moveVertical == -1) && canMove) {
-            for (i=0; i<(list.Length); i++) {
-                if (list[i].transform.position.y - transform.position.y == (-2) && (transform.position.x == list[i].transform.position.x)) {
-                    canMove = false;
-                    complete = false;
-                    temp1 = list[i].transform.position.y;
-                    temp2 = transform.position.y;
-                    pos1 = list[i].transform.position;
-                    pos2 = transform.position;
-                    StartCoroutine(swap(i, "down"));
-                    //list[i].transform.Translate(new Vector3(0, 2, 0));
-                    //transform.Translate(new Vector3(0, -2, 0));
-                    break;
+            if ((moveVertical == 1) && canMove) {
+                for (i=0; i<(list.Length); i++) {
+                    if ((list[i].transform.position.y - transform.position.y == 2) && (transform.position.x == list[i].transform.position.x)) {
+                        canMove = false;
+                        complete = false;
+                        temp1 = list[i].transform.position.y;
+                        temp2 = transform.position.y;
+                        pos1 = list[i].transform.position;
+                        pos2 = transform.position;
+                        Sound.Play();
+                        StartCoroutine(swap(i, "up"));
+                        //list[i].transform.Translate(new Vector3(0, -2, 0));
+                        //transform.Translate(new Vector3(0, 2, 0));
+                        break;
+                    }
+                }
+            }
+
+            if ((moveVertical == -1) && canMove) {
+                for (i=0; i<(list.Length); i++) {
+                    if (list[i].transform.position.y - transform.position.y == (-2) && (transform.position.x == list[i].transform.position.x)) {
+                        canMove = false;
+                        complete = false;
+                        temp1 = list[i].transform.position.y;
+                        temp2 = transform.position.y;
+                        pos1 = list[i].transform.position;
+                        pos2 = transform.position;
+                        Sound.Play();
+                        StartCoroutine(swap(i, "down"));
+                        //list[i].transform.Translate(new Vector3(0, 2, 0));
+                        //transform.Translate(new Vector3(0, -2, 0));
+                        break;
+                    }
                 }
             }
         }
@@ -128,6 +139,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
             }
@@ -140,6 +152,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
             }
@@ -152,6 +165,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
             }
@@ -164,6 +178,7 @@ public class MoveTile : MonoBehaviour
                     list[i].transform.position = pos2;
                     complete = true;
                     canMove = true;
+                    //Sound.Play();
                     //yield return new WaitForSeconds(2.0f);
                 }
             }

@@ -11,6 +11,11 @@ TagManager:
   - EGreen
   - EBlue
   - ERed
+  - Play
+  - MusicOn
+  - MusicOff
+  - Pause
+  - Home
   layers:
   - Default
   - TransparentFX
