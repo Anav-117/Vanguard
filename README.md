@@ -3,14 +3,16 @@ Vanguard is a game that brings together ideas from engaging genres and implement
 
 Game By - 
 	Anav Chaudhary
+		https://github.com/Anav-117
 
 Art By - 
 	Tushar Walia
 		https://www.behance.net/tusharw
 
 Background Songs - 
-	Midnight Skyway - Cliffdiver
-		https://cliffdiverambient.bandcamp.com
 
-	Better Days - LAKEY INSPIRED
-		https://soundcloud.com/lakeyinspired
+Midnight Skyway - Cliffdiver
+	https://cliffdiverambient.bandcamp.com
+
+Better Days - LAKEY INSPIRED
+	https://soundcloud.com/lakeyinspired
