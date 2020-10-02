@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1155792477300114487}
   - component: {fileID: 6627075486069005425}
   - component: {fileID: 2197715498941467769}
+  - component: {fileID: 3431223906052020796}
   m_Layer: 0
   m_Name: Hero_Blue
   m_TagString: Blue
@@ -206,3 +207,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3431223906052020796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155792477300114472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc772dc55b5b56d49bd030f35e5f7f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceMaterial: {fileID: 0}
+  ActiveChange: 1
+  _Alpha: 1
+  _Color: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
+  Seed: 1
+  Desintegration: 0
+  ShaderChange: 0

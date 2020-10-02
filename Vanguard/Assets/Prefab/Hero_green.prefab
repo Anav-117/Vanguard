@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1538501466597415355}
   - component: {fileID: -8256160597442384175}
   - component: {fileID: -4630453423946436383}
+  - component: {fileID: -3448714877536413126}
   m_Layer: 0
   m_Name: Hero_Green
   m_TagString: Green
@@ -206,3 +207,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3448714877536413126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538501466597415352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc772dc55b5b56d49bd030f35e5f7f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceMaterial: {fileID: 0}
+  ActiveChange: 1
+  _Alpha: 1
+  _Color: {r: 0.22352943, g: 0.70980394, b: 0.2901961, a: 1}
+  Seed: 1
+  Desintegration: 0
+  ShaderChange: 0

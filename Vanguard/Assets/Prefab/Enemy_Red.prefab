@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 911426192166849454}
   - component: {fileID: -6913215722031721117}
   - component: {fileID: 4220694723391889217}
+  - component: {fileID: -3383248918103958599}
   m_Layer: 0
   m_Name: Enemy_Red
   m_TagString: ERed
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EDSound: {fileID: 0}
   PDSound: {fileID: 0}
+  FX_DestroyedFX: {fileID: 0}
 --- !u!61 &911426192166849454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,3 +245,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3383248918103958599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562909300912129246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d453a206e2a154495150809124168f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceMaterial: {fileID: 0}
+  ActiveChange: 1
+  _Alpha: 1
+  Seed: 1
+  Destroyed: 0
+  ShaderChange: 0
