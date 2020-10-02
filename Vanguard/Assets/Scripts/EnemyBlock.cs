@@ -82,8 +82,6 @@ public class EnemyBlock : MonoBehaviour
             des = true;
             Desintegrate = other.GetComponent<_2dxFX_DesintegrationFX>();
             //Debug.Log(Desintegrate);
-            Color tmp = other.GetComponent<SpriteRenderer>().color;
-            tmp.a = 0f;
             collisionbox = other.GetComponent<BoxCollider2D>();
             Destroy(collisionbox);
             //Destroy(gameObject);

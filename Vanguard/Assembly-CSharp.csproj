@@ -50,6 +50,7 @@
      <Compile Include="Assets\2DxFX\Scripts\2dxfx_AL\_2dxFX_AL_DestroyedFX.cs" />
      <Compile Include="Assets\2DxFX\Scripts\_2DxFX.cs" />
      <Compile Include="Assets\2DxFX\Scripts\2dxfx_AL\_2dxFX_AL_DesintegrationFX.cs" />
+     <Compile Include="Assets\Scripts\Instruction.cs" />
      <None Include="Assets\2DxFX\Resources\2dxfx_AL\_2dxFX_AL_WoodFX.shader" />
      <None Include="Assets\2DxFX\Resources\2dxfx_AL\_2dxFX_AL_StoneFX.shader" />
      <None Include="Assets\2DxFX\Resources\2dxfx_AL\_2dxFX_AL_Smoke.shader" />

@@ -23,6 +23,9 @@ public class StartGame : MonoBehaviour
             if (hit.collider.gameObject.tag == "Play") {
                 SceneManager.LoadScene("PlayState");
             }
+            if (hit.collider.gameObject.tag == "Ins") {
+                SceneManager.LoadScene("InstructionState");
+            }
         }
         if (Input.GetKey("escape")) {
             Application.Quit();

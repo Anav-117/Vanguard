@@ -16,6 +16,7 @@ TagManager:
   - MusicOff
   - Pause
   - Home
+  - Ins
   layers:
   - Default
   - TransparentFX
